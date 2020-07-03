@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = 123;//栈给n变量分配空间，用来存123
+        var str = '123' //栈 给 str变量 分配空间 用来存字符串'123'
+        var o = {
+            name:'周超',
+        } //给 o变量分配空间。存指针（o）。堆来存对象数据
+        //堆来存对象数据 堆是虚拟的 程序员创建
+        //栈给对象下属性name分配空间 用来存字符串'周超'
+        var arr = [1,2,3]
+
+        //给函数(可调用的对象) 分配内存
+        //栈 foo 存指针，堆，存函数提供指针
+        //函数调用。栈存返回值(时间到，返回值没有被变量引用，销毁，计算机销毁（销毁a+2）)
+        function foo(a){
+            return a+2
+        }
+
+        //栈arr 存指针，栈 存元素 。堆：创建空间存数组，提供指针
+    </script>
+</body>
+</html>

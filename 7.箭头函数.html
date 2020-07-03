@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //箭头函数没有this指向
+        //箭头函数中this 用的【上一层】中的this
+
+        //这是箭头函数
+        var obj = () =>{
+            //上一层作用域 为 全局 所以window
+            console.log(this)
+        }
+        var foo = {
+            obj:obj,
+            bar:this
+        }
+        foo.obj()
+        function bar(){
+            var obj = {
+                foo:()=>{
+                    //无this 但可以用
+                    console.log(this)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

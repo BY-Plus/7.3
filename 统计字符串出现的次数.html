@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = 'saadsaadsaeedwwwwaaa';
+        //求第一个字符出现的次数
+        var count = 0;
+        var one = str[0];
+        for(var i = 0;i<str.length;i++){
+            if(one===str[i]){
+                ++count
+            }
+        }
+        console.log(count)
+
+
+        //统计 de再str出现的次数是多少
+        var count = 0;
+        var one = {d:count,e:count}  //判断对象下的每一个key再str中出现几次
+        for(var x in one){
+            //统计对象下的每一个key 再str 中出现的次数
+            for(var i = 0;i<str.length;i++){
+                if(x===str[i]){
+                    ++one[x];
+                }
+            }
+        }
+       
+        console.log(one)
+    </script>
+</body>
+</html>

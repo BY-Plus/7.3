@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //找有多少个
+         var str = 'wrer23t2twerrwer2342rweee';
+        var obj = {};
+        //var count = 0;
+        var flag = false; //开关，true存在，false不存在
+        for(var i = 0;i<str.length;i++){ //去重
+            // str[i]   //统计str[i]出现的次数
+            //var count = 1;
+        //验证obj中是否存在 str[i]
+            for(var x in obj){  //找到对象中的每一个key
+                //用str的每一个字符与obj 中的key进行比较
+                if(str[i]===x){ //obj中 存在key
+                   // ++count;
+                    flag = true;
+                    break    //重复就结束
+                }else{
+                    flag = false;
+                }
+            }
+            //去重 新增 验证 再添加
+            //不存在才新增
+            if(!flag){
+                obj[str[i]] = 0;
+            }
+        }
+        
+        //第二步：统计 obj对象下 key在str中出现的次数value表示出现次数
+
+        for(var x in obj){
+            for(var j = 0;j<str.length;j++){
+                if(x===str[j]){
+                    ++obj[x];
+                }
+            }
+        }
+        
+        console.log(obj)
+        var max = 0;
+        var maxkey = '';
+        for(var y in obj){
+            if(max<obj[y]){
+                max = obj[y]
+                maxkey = y
+            }
+        }
+        console.log(maxkey,max)
+
+        //排错 
+        //1.根据输出结果 判断哪一个代码没执行
+        //2.打断点到任务会导致不执行这个代码的语句上，或这行代码
+        //3.监听：与打断点有关的变量。目的为了查看复制变化过程
+    </script>
+</body>
+</html>

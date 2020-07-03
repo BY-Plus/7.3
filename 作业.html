@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //封装一个颠倒字符串的函数，要求随机传如一个字符串，将这个字符串颠倒
+        // function resverString(param){
+        //     if(arguments.length>1){
+        //         throw new Error('xxxx')
+        //     }
+        //     if(typeof(paeam) !=='string'){
+        //         thro
+        //       throw new Error('must be string')
+        //     }
+        //     var res = ''
+        //     for(var i = param.length - 1;i >=0;i--){
+        //         res +=param[i];
+        //     }
+        //     return res;
+        // }
+        // var newStr = resverString(str)
+        // console.length(newStr)
+
+        //方式二
+        var str = 'sfafgsfaf';
+        var res = str.split('').reverse().join('')
+        console.log(res)
+        function reverseString(str){
+            return str.split('').reverse().join('')
+        }
+
+        //求一个字符串中字符出现最多的以及出现多少次并统计次数
+        //1.用对象统计，将不重复字符变为对象中key  value 统计出现次数
+        //---->将字符串变为对象中不重复的key（去重处理）
+        //---->统计字符串中的每一个字符出现多少次
+        //---->比较大小
+        //2.将对象中的value 进行比较 并求最大值 同时返回对应的key和value
+        var str = 'wrer23t2twerrwer2342rweee';
+        var obj = {};
+        var count = 0;
+        var flag = false; //开关，true存在，false不存在
+        for(var i = 0;i<str.length;i++){ //去重
+            // str[i]   //统计str[i]出现的次数
+            var count = 1;
+        //验证obj中是否存在 str[i]
+            for(var x in obj){  //找到对象中的每一个key
+                if(str[i]===x){ //obj中 存在key
+                    ++count;
+                    flag = true;
+                    break    //重复就结束
+                }else{
+                    flag = false;
+                }
+            }
+            //去重 新增 验证 再添加
+            //不存在才新增
+            if(!flag){
+                obj[str[i]] = count;
+            }
+        }
+        //第二部
+        for(var y in obj){
+            for(var j = 0;j<str.length;j++){
+                if(j===str[j]){
+                    ++obj[y];
+                }
+            }
+
+        }
+        console.log(obj)
+
+        //第三步
+        var max = 0;
+        var maxkey = '';
+        for(var z in obj){
+            if(max<obj[z]){
+                max = obj[z]
+                maxkey = z
+
+            }
+        }
+        console.log(max,maxkey)
+    </script>
+</body>
+</html>
